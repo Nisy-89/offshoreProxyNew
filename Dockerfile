@@ -10,5 +10,5 @@ COPY target/offshoreProxy-1.0.0-jar-with-dependencies.jar /app/offshoreProxy.jar
 # Expose the port for offshore proxy communication
 EXPOSE 9090
 
-# Run the application
+# Command to run the JAR file
 CMD ["java", "-jar", "offshoreProxy.jar"]
