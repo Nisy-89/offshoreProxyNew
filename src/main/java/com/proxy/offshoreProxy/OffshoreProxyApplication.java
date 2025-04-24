@@ -32,10 +32,10 @@ public class OffshoreProxyApplication {
 			String requestLine = reader.readLine();
 			if (requestLine == null || requestLine.isEmpty()) return;
 
-			// Read rest of headers (but discard for now)
+			
 			String line;
 			while ((line = reader.readLine()) != null && !line.isEmpty()) {
-				// You can optionally log or parse headers here
+				
 			}
 
 			System.out.println("Received request:\n" + requestLine);
@@ -72,11 +72,11 @@ public class OffshoreProxyApplication {
 		int responseCode = connection.getResponseCode();
 		System.out.println("Received response code: " + responseCode);
 
-		// Write the HTTP status line
+		
 		String statusLine = "HTTP/1.1 " + responseCode + " " + connection.getResponseMessage() + "\r\n";
 		clientOutput.write(statusLine.getBytes());
 
-		// Write headers
+		
 		for (String key : connection.getHeaderFields().keySet()) {
 			if (key == null) continue;
 			for (String value : connection.getHeaderFields().get(key)) {
